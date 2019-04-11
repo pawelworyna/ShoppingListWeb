@@ -24,7 +24,7 @@
         }
 
         $response['status'] = 0;
-        $response['usr_id'] = null;
+        $response['usr_id'] = -1;
 
     }
 

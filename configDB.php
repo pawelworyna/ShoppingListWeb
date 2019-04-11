@@ -3,5 +3,4 @@
   $dbuser = "user";
   $dbpass = "";
   $db = "shopping";
-
  ?>
