@@ -11,7 +11,7 @@
 $products = array();
 
 //this is our sql query
-$sql = "SELECT product, quantity FROM list;";
+$sql = "SELECT product, quantity FROM products;";
 
 //creating an statment with the query
 $stmt = $conn->prepare($sql);

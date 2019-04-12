@@ -11,7 +11,7 @@
     die("Connection failed: " . $conn->connect_error);
   }
 
-  $sql_query = "INSERT INTO list(product, quantity, price) VALUES ('$product','$quantity','$price')";
+  $sql_query = "INSERT INTO products(product, quantity, price) VALUES ('$product','$quantity','$price')";
 
   if(mysqli_query($conn, $sql_query)){
     echo "Insert data sucessfully!";

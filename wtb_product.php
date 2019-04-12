@@ -1,8 +1,10 @@
 <?php
   if($_SERVER['REQUEST_METHOD']=='POST'){
   include 'configDB.php';
-  $product = $_POST['product'];
-  $quantity = $_POST['quantity'];
+  $product_name = $_POST['productName'];
+  $product_ID = $_POST['productID'];
+  $user_id = $_POST['nameUsr'];
+
 
   $conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
 
@@ -10,10 +12,10 @@
     die("Connection failed: " . $conn->connect_error);
   }
 
-  $sql_query = "DELETE FROM products WHERE product = '$product' AND quantity = '$quantity'";
+  $sql_query = "UPDATE products VALUES ('$nameUsr','$passwordUSr','$emailUsr')";
 
   if(mysqli_query($conn, $sql_query)){
-    echo "Insert data sucessfully!";
+    echo "Create account successfully!";
   } else{
     echo "Try again";
   }
