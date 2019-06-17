@@ -11,7 +11,7 @@
 $products = array();
 
 //this is our sql query
-$sql = "SELECT product, quantity FROM products;";
+$sql = "SELECT products.product, products.quantity, products.status, users.name FROM  products LEFT OUTER JOIN users ON products.user_id = users.id;";
 
 //creating an statment with the query
 $stmt = $conn->prepare($sql);
@@ -20,7 +20,7 @@ $stmt = $conn->prepare($sql);
 $stmt->execute();
 
 //binding results for that statment
-$stmt->bind_result($product, $quantity);
+$stmt->bind_result($product, $quantity, $status, $userName);
 
 //looping through all the records
 while($stmt->fetch()){
@@ -28,7 +28,10 @@ while($stmt->fetch()){
  //pushing fetched data in an array
  $temp = [
  'product'=>$product,
- 'quantity'=>$quantity
+ 'quantity'=>$quantity,
+ 'status' => $status,
+ 'userName' => $userName
+
  ];
 
  //pushing the array inside the products array

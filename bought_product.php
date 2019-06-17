@@ -12,7 +12,7 @@
     die("Connection failed: " . $conn->connect_error);
   }
 
-  $sql_query = "UPDATE products SET user_id = '$user_id', status = 1 WHERE product = '$product_name' AND quantity = '$product_quantity';";
+  $sql_query = "UPDATE products SET user_id = '$user_id', status = 2 WHERE product = '$product_name' AND quantity = '$product_quantity';";
 
   if(mysqli_query($conn, $sql_query)){
     echo "Update list successfully!";
